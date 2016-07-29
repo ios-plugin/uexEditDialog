@@ -6,7 +6,7 @@
 //  Copyright (c) 2012年 AppCan. All rights reserved.
 //
 
-#import "EUExBase.h"
+
 #import "EditDialog.h"
 @interface EUExEditDialog : EUExBase<EditDialogDelegate>{
     NSMutableDictionary *EDDict;

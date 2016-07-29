@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		215575AD1D4AE3D800FDC5B2 /* AppCanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215575AC1D4AE3D800FDC5B2 /* AppCanKit.framework */; };
 		5A500F5C188FB2940022E07C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A500F5B188FB2940022E07C /* Foundation.framework */; };
 		5A500F63188FB2940022E07C /* EUExEditDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A500F62188FB2940022E07C /* EUExEditDialog.m */; };
 		5A500F88188FB2D80022E07C /* EditDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A500F87188FB2D80022E07C /* EditDialog.m */; };
@@ -25,13 +26,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		215575AC1D4AE3D800FDC5B2 /* AppCanKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCanKit.framework; sourceTree = "<group>"; };
 		5A500F58188FB2940022E07C /* libuexEditDialog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libuexEditDialog.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A500F5B188FB2940022E07C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5A500F5F188FB2940022E07C /* EUExEditDialog-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EUExEditDialog-Prefix.pch"; sourceTree = "<group>"; };
 		5A500F62188FB2940022E07C /* EUExEditDialog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EUExEditDialog.m; sourceTree = "<group>"; };
 		5A500F69188FB2940022E07C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5A500F6C188FB2940022E07C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		5A500F82188FB2D80022E07C /* EUExBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBase.h; sourceTree = "<group>"; };
 		5A500F83188FB2D80022E07C /* EUExBaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBaseDefine.h; sourceTree = "<group>"; };
 		5A500F84188FB2D80022E07C /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
 		5A500F86188FB2D80022E07C /* EditDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDialog.h; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				215575AD1D4AE3D800FDC5B2 /* AppCanKit.framework in Frameworks */,
 				5A500F5C188FB2940022E07C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,7 +103,6 @@
 		5A500F81188FB2D80022E07C /* engineHeader */ = {
 			isa = PBXGroup;
 			children = (
-				5A500F82188FB2D80022E07C /* EUExBase.h */,
 				5A500F83188FB2D80022E07C /* EUExBaseDefine.h */,
 				5A500F84188FB2D80022E07C /* EUtility.h */,
 			);
@@ -111,6 +112,7 @@
 		5A500F85188FB2D80022E07C /* sourceCode */ = {
 			isa = PBXGroup;
 			children = (
+				215575AC1D4AE3D800FDC5B2 /* AppCanKit.framework */,
 				5A500F86188FB2D80022E07C /* EditDialog.h */,
 				5A500F87188FB2D80022E07C /* EditDialog.m */,
 			);
@@ -251,8 +253,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexEditDialog/";
 				DSTROOT = /tmp/EUExEditDialog.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EUExEditDialog/sourceCode",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EUExEditDialog/EUExEditDialog-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
@@ -265,8 +272,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexEditDialog/";
 				DSTROOT = /tmp/EUExEditDialog.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EUExEditDialog/sourceCode",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EUExEditDialog/EUExEditDialog-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
