@@ -81,21 +81,7 @@ static inline NSString * newUUID(){
     [EDDict setObject:edView forKey:key];
     return key;
 }
--(NSString*)insertData:(NSMutableArray *)inArguments{
-    ACArgsUnpack(NSDictionary *dic) = inArguments;
-    NSString *key = stringArg(dic[@"id"]) ?: newUUID();
-    EditDialog *edView = [EDDict objectForKey:key];
-    if (!edView) {
-        return nil;
-    }
-    NSString *str =stringArg(dic[@"text"]);
-    if (str && str.length>0) {
-        [edView insertNewContent:str];
-    }
-    //[super jsSuccessWithName:@"uexEditDialog.cbInsert" opId:0 dataType:2 intData:0];
-    //[self.webViewEngine callbackWithFunctionKeyPath:@"uexEditDialog.cbInsert" arguments:ACArgsPack(@([key intValue]),@2,@0)];
-    return key;
-}
+
 /**************************************/
 -(NSNumber*)close:(NSMutableArray *)inArguments{
     NSString *key =[inArguments objectAtIndex:0];
@@ -113,20 +99,22 @@ static inline NSString * newUUID(){
      return @(NO);
 }
 
--(void)insert:(NSMutableArray *)inArguments{
-    NSString *key =[inArguments objectAtIndex:0];
+-(NSNumber*)insert:(NSMutableArray *)inArguments{
+    ACArgsUnpack(NSString *key, NSString *str) = inArguments;
+    //NSString *key =[inArguments objectAtIndex:0];
     EditDialog *edView = [EDDict objectForKey:key];
     if (!edView) {
         //[super jsSuccessWithName:@"uexEditDialog.cbInsert" opId:0 dataType:2 intData:1];
         [self.webViewEngine callbackWithFunctionKeyPath:@"uexEditDialog.cbInsert" arguments:ACArgsPack(@([key intValue]),@2,@1)];
-        return;
+         return @(NO);
     }
-    NSString *str =[inArguments objectAtIndex:1];
+    //NSString *str =[inArguments objectAtIndex:1];
     if (str && str.length>0) {
-        [edView insertContent:str];
+        [edView insertNewContent:str];
     }
     //[super jsSuccessWithName:@"uexEditDialog.cbInsert" opId:0 dataType:2 intData:0];
     [self.webViewEngine callbackWithFunctionKeyPath:@"uexEditDialog.cbInsert" arguments:ACArgsPack(@([key intValue]),@2,@0)];
+     return @(YES);
 }
 
 -(NSNumber*)cleanAll:(NSMutableArray *)inArguments{

@@ -8,6 +8,5 @@
         <method name="cleanAll" sync = "true"></method>
         
         <method name="create" sync = "true"></method>
-        <method name="insertData" sync = "true"></method>
     </plugin>
 </uexplugins>

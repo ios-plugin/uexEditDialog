@@ -27,7 +27,6 @@
 -(void)showView:(NSMutableArray*)inArguments;
 -(void)showNewView:(NSMutableArray*)inArguments idStr:(NSString*)idStr;
 -(void)closeView;
--(void)insertContent:(NSString*)inContent;
 -(void)insertNewContent:(NSString*)inContent;
 -(void)cleanAllData;
 -(NSString*)getContent;

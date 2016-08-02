@@ -38,19 +38,7 @@
 -(void)closeView{
     [edView removeFromSuperview];
 }
--(void)insertContent:(NSString*)inContent{
-        NSMutableString *newStr =[NSMutableString stringWithString:edView.text];
-        [newStr insertString:inContent atIndex:location];
-        edView.text = newStr;
-        int existTextNum = [edView.text length];
-        if (maxNum > 0) {
-            int remainTextNum =maxNum - existTextNum;
-            if (_delegate && [_delegate respondsToSelector:@selector(remainTextNum:opId:)]) {
-                [_delegate remainTextNum:remainTextNum opId:opId];
-            }
-        }
 
-}
 -(void)insertNewContent:(NSString*)inContent{
     dispatch_async(dispatch_get_main_queue(), ^{
         NSMutableString *newStr =[NSMutableString stringWithString:edView.text];
