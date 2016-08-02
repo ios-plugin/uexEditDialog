@@ -4,7 +4,7 @@
         <method name="open"></method>
         <method name="close" sync = "true"></method>
         <method name="getContent" sync = "true"></method>
-        <method name="insert"></method>
+        <method name="insert" sync = "true"></method>
         <method name="cleanAll" sync = "true"></method>
         
         <method name="create" sync = "true"></method>
