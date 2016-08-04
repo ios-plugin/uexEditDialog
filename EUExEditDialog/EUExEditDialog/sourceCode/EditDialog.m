@@ -160,7 +160,7 @@
     opId = idStr;
     NSLog(@"opId:%@",opId);
     float ex = [ac_numberArg(dic[@"x"]) floatValue];
-    float ey = [ac_numberArg(dic[@"x"]) floatValue];
+    float ey = [ac_numberArg(dic[@"y"]) floatValue];
     float ew = [ac_numberArg(dic[@"width"]) floatValue];
     float eh = [ac_numberArg(dic[@"height"]) floatValue];
     float fontSize =[ac_numberArg(dic[@"fontSize"]) floatValue];
