@@ -87,7 +87,10 @@ static inline NSString * newUUID(){
     NSString *key =[inArguments objectAtIndex:0];
     EditDialog *edView = [EDDict objectForKey:key];
     if (edView) {
-        [edView closeView];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [edView closeView];
+        });
+        
         [EDDict removeObjectForKey:key];
         //[super jsSuccessWithName:@"uexEditDialog.cbClose" opId:[key intValue] dataType:2 intData:0];
         [self.webViewEngine callbackWithFunctionKeyPath:@"uexEditDialog.cbClose" arguments:ACArgsPack(@([key intValue]),@2,@0)];
