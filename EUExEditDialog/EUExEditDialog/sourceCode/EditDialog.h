@@ -20,14 +20,14 @@
     //UIView *containView;
     int maxNum;
     int location;
-    id<EditDialogDelegate> delegate;
     NSString *opId;
 }
 @property(nonatomic,assign)id<EditDialogDelegate> delegate;
 -(id)initWithEuex:(EUExEditDialog*)inObj;
 -(void)showView:(NSMutableArray*)inArguments;
+-(void)showNewView:(NSMutableArray*)inArguments idStr:(NSString*)idStr;
 -(void)closeView;
--(void)insertContent:(NSString*)inContent;
--(void)cleanAll;
+-(void)insertNewContent:(NSString*)inContent;
+-(void)cleanAllData;
 -(NSString*)getContent;
 @end

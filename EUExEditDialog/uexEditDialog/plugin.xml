@@ -6,5 +6,7 @@
         <method name="getContent"></method>
         <method name="insert"></method>
         <method name="cleanAll"></method>
+        
+        <method name="create"></method>
     </plugin>
 </uexplugins>
