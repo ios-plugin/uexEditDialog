@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <uexplugins>
   <plugin uexName="uexEditDialog" version="4.0.0" build="0">
-    <info>0: 4.0插件</info>
+    <info>0: uexEditDialog for iOS</info>
   </plugin>
   
 </uexplugins>
